@@ -208,7 +208,6 @@
     </footer>
 
     <script>
-        // Voeg animatie sterren toe
         function createStars() {
             const bg = document.querySelector('.animated-bg');
             const numberOfStars = 50;
@@ -217,23 +216,19 @@
                 const star = document.createElement('div');
                 star.classList.add('star');
                 
-                // Random size
                 const size = Math.random() * 5 + 2;
                 star.style.width = `${size}px`;
                 star.style.height = `${size}px`;
                 
-                // Random position
                 star.style.top = `${Math.random() * 100}%`;
                 star.style.left = `${Math.random() * 100}%`;
                 
-                // Random delay
                 star.style.animationDelay = `${Math.random() * 8}s`;
                 
                 bg.appendChild(star);
             }
         }
         
-        // Voer de functie uit wanneer de pagina is geladen
         document.addEventListener('DOMContentLoaded', createStars);
     </script>
 </body>
