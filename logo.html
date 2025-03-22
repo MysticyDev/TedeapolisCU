@@ -3,6 +3,7 @@
 <head>
     <title>TedeapolisCU Logo</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="robots" content="noindex">
     <style>
         body, html {
             margin: 0;
@@ -23,6 +24,19 @@
     </style>
 </head>
 <body>
-    <img src="images/tedeapoliscu.png" alt="TedeapolisCU Logo">
+    <img id="logoImage" alt="TedeapolisCU Logo">
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const logoType = urlParams.get('type') || 'default';
+        
+        const logoMap = {
+            'default': 'images/tedeapoliscu.png',
+            'favicon': 'images/favicon.ico',
+        };
+        
+        const logoPath = logoMap[logoType] || logoMap['default'];
+        document.getElementById('logoImage').src = logoPath;
+    </script>
 </body>
 </html>
